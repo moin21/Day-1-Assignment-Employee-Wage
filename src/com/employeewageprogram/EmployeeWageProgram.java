@@ -13,15 +13,19 @@ public class EmployeeWageProgram {
 	}
 
 	public static void attendanceWageCalculation() {
-		if (empAttendance == 0) {
+		switch (empAttendance) {
+		case (0):
 			dailyWage = 0;
 			System.out.println("Employee is absent today. Total wage is " + dailyWage);
-		} else if (empAttendance == 1) {
+			break;
+		case (1):
 			dailyWage = WAGE_PER_HOUR * PART_TIME_HOUR;
-			System.out.println("Part Time Employee is present today. Total wage is " + dailyWage);
-		} else {
+			System.out.println("Employee is present part time today. Total wage is " + dailyWage);
+			break;
+		default:
 			dailyWage = WAGE_PER_HOUR * FULL_TIME_HOUR;
-			System.out.println("Full Time Employee is present today. Total wage is " + dailyWage);
+			System.out.println("Employee is present full time today. Total wage is " + dailyWage);
+			break;
 		}
 	}
 }
