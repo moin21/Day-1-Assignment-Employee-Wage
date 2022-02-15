@@ -2,14 +2,21 @@ package com.employeewageprogram;
 
 public class EmployeeWageProgram {
 	public static int empAttendance = (int) (Math.floor(Math.random() * 10) % 2);
+	public static final int WAGE_PER_HOUR = 20;
+	public static final int FULL_TIME_HOUR = 8;
+	public static int dailyWage;
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Program!!");
-		attendance();
+		attendanceWageCalculation();
 	}
-	public static void attendance() {
+	public static void attendanceWageCalculation() {
 		if(empAttendance == 0) {
-			System.out.println("Employee is absent today.");
+			dailyWage = 0;
+			System.out.println("Employee is absent today. Total wage is "+ dailyWage);
 		}
-		else System.out.println("Employee is present today.");
+		else {
+			dailyWage = WAGE_PER_HOUR * FULL_TIME_HOUR;
+			System.out.println("Employee is present today. Total wage is "+ dailyWage);
+	}
 	}
 }
